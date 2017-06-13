@@ -1,22 +1,22 @@
 var eq = require('../../src/eq');
 
 
-test.skip('Type(x) is the same as Type(y)', function () {
+test('Type(x) is the same as Type(y)', function () {
     expect(5 == 5).toBeTruthy();
     expect(eq(5, 5)).toBeTruthy();
 });
 
-test.skip('If x is null and y is undefined, return true', function () {
+test('If x is null and y is undefined, return true', function () {
     expect(null == undefined).toBeTruthy();
     expect(eq(null, undefined)).toBeTruthy();
 });
 
-test.skip('If x is undefined and y is null, return true.', function () {
+test('If x is undefined and y is null, return true.', function () {
     expect(undefined == null).toBeTruthy();
     expect(eq(undefined, null)).toBeTruthy();
 });
 
-test.skip('If Type(x) is Number and Type(y) is String, return the result of the comparison x == ToNumber(y).', function () {
+test('If Type(x) is Number and Type(y) is String, return the result of the comparison x == ToNumber(y).', function () {
     expect(1 == '1').toBeTruthy();
     expect(1 != '2').toBeTruthy();
 
@@ -24,7 +24,7 @@ test.skip('If Type(x) is Number and Type(y) is String, return the result of the 
     expect(!eq(1, '2')).toBeTruthy();
 });
 
-test.skip('If Type(x) is String and Type(y) is Number, return the result of the comparison ToNumber(x) == y.', function () {
+test('If Type(x) is String and Type(y) is Number, return the result of the comparison ToNumber(x) == y.', function () {
     expect('1' == 1).toBeTruthy();
     expect('1' != 2).toBeTruthy();
 
@@ -32,7 +32,7 @@ test.skip('If Type(x) is String and Type(y) is Number, return the result of the 
     expect(!eq('1', 2)).toBeTruthy();
 });
 
-test.skip('If Type(x) is Boolean, return the result of the comparison ToNumber(x) == y.', function () {
+test('If Type(x) is Boolean, return the result of the comparison ToNumber(x) == y.', function () {
     expect(true == 1).toBeTruthy();
     expect(false == 0).toBeTruthy();
 
@@ -40,7 +40,7 @@ test.skip('If Type(x) is Boolean, return the result of the comparison ToNumber(x
     expect(eq(false, 0)).toBeTruthy();
 });
 
-test.skip('If Type(y) is Boolean, return the result of the comparison x == ToNumber(y).', function () {
+test('If Type(y) is Boolean, return the result of the comparison x == ToNumber(y).', function () {
     expect(1 == true).toBeTruthy();
     expect(0 == false).toBeTruthy();
 
