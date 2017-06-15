@@ -1,4 +1,4 @@
-var NEW = require('../../src/new');
+const NEW = require('../../src/new');
 
 function Person(name) {
     this.name = name;
