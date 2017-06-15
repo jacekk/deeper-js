@@ -1,4 +1,4 @@
-const curry = require('../../src/curry');
+const { curry } = require('../../src/curry');
 
 function ajax(userId) {
     if(!userId) throw new Error('should not happen');

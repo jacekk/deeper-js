@@ -1,35 +1,35 @@
-const { curry } = require('../../src/curry');
+const { oldStyleCurry } = require('../../src/curry');
 
 function sum(a, b, c) {
     return a + b + c;
 }
 
 test('f(a,b,c)', function () {
-    var sumC = curry(sum);
+    var sumC = oldStyleCurry(sum);
 
     expect(sumC(1, 2, 3)).toBe(6);
 });
 
 test('f(a,b)(c)', function () {
-    var sumC = curry(sum);
+    var sumC = oldStyleCurry(sum);
 
     expect(sumC(1, 2)(3)).toBe(6);
 });
 
 test('f(a)(b, c)', function () {
-    var sumC = curry(sum);
+    var sumC = oldStyleCurry(sum);
 
     expect(sumC(1)(2, 3)).toBe(6);
 });
 
 test('f(a)(b)(c)', function () {
-    var sumC = curry(sum);
+    var sumC = oldStyleCurry(sum);
 
     expect(sumC(1)(2)(3)).toBe(6);
 });
 
 test('f(a)(b)(c,d,e) with extra args', function () {
-    var sumC = curry(sum);
+    var sumC = oldStyleCurry(sum);
 
     expect(sumC(1)(2)(3, 4, 5)).toBe(6);
 });
