@@ -1,9 +1,9 @@
-var Primitive = require('../../src/toPrimitive');
+const toPrimitive = require('../../src/toPrimitive');
 
-test('converts primitive input type', function () {
-    expect(Primitive(1)).toBe(1);
-    expect(Primitive('a')).toBe('a');
-    expect(Primitive(null)).toBe(null);
+test('converts toPrimitive input type', function () {
+    expect(toPrimitive(1)).toBe(1);
+    expect(toPrimitive('a')).toBe('a');
+    expect(toPrimitive(null)).toBe(null);
 });
 
 test('converts object with valueOf happy path', function () {
@@ -16,7 +16,7 @@ test('converts object with valueOf happy path', function () {
         }
     };
 
-    expect(Primitive(o)).toBe(1);
+    expect(toPrimitive(o)).toBe(1);
 });
 
 test('converts object with valueOf unhappy path', function () {
@@ -29,9 +29,8 @@ test('converts object with valueOf unhappy path', function () {
         }
     };
 
-    expect(Primitive(o)).toBe('1');
+    expect(toPrimitive(o)).toBe('1');
 });
-
 
 test('fails on inconvertible input', function () {
     var o = {
@@ -44,6 +43,6 @@ test('fails on inconvertible input', function () {
     };
 
     expect(() => {
-        Primitive(o);
+        toPrimitive(o);
     }).toThrowError(/input cannot be converted to primitive/);
 });

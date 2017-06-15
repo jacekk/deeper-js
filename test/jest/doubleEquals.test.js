@@ -1,5 +1,4 @@
-var eq = require('../../src/eq');
-
+const eq = require('../../src/eq');
 
 test('Type(x) is the same as Type(y)', function () {
     expect(5 == 5).toBeTruthy();
@@ -48,7 +47,7 @@ test('If Type(y) is Boolean, return the result of the comparison x == ToNumber(y
     expect(eq(0, false)).toBeTruthy();
 });
 
-test.skip('If Type(x) is either String, Number, or Symbol and Type(y) is Object, return the result of the comparison x == ToPrimitive(y).', function () {
+test('If Type(x) is either String, Number, or Symbol and Type(y) is Object, return the result of the comparison x == ToPrimitive(y).', function () {
     var o4 = {
         valueOf: function (assert) {
             return 1;
@@ -87,7 +86,7 @@ test.skip('If Type(x) is either String, Number, or Symbol and Type(y) is Object,
     expect(eq(1, o7)).toBeTruthy();
 });
 
-test.skip('If Type(x) is Object and Type(y) is either String, Number, or Symbol, return the result of the comparison ToPrimitive(x) == y.', function () {
+test('If Type(x) is Object and Type(y) is either String, Number, or Symbol, return the result of the comparison ToPrimitive(x) == y.', function () {
     var o4 = {
         valueOf() {
             return 1;
@@ -126,7 +125,7 @@ test.skip('If Type(x) is Object and Type(y) is either String, Number, or Symbol,
     expect(eq(o7, 1)).toBeTruthy();
 });
 
-test.skip('default false', function () {
+test('default false', function () {
     expect({} != undefined).toBeTruthy();
 
     expect(!eq({}, undefined)).toBeTruthy();
@@ -179,7 +178,7 @@ test.skip('some worst offenders', function () {
     expect(!eq(0, {})).toBeTruthy();
 });
 
-test.skip('safe parts', function () {
+test('safe parts', function () {
     expect(!eq(42, '43')).toBeTruthy();
     expect(!eq(42, 'foo')).toBeTruthy();
     expect(!eq(true, 'true')).toBeTruthy();

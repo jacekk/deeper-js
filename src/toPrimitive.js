@@ -1,4 +1,4 @@
-const isObject = x => x !== null && ~['function', 'object'].indexOf(typeof x);
+var isObject = require('./isObject');
 
 module.exports = function toPrimitive(x) {
     if (!isObject(x)) {

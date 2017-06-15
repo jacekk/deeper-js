@@ -1,4 +1,9 @@
-var {Programmer1, Programmer2, Programmer3, createProgrammer} = require('../../src/programmer');
+const {
+    Programmer1,
+    Programmer2,
+    Programmer3,
+    createProgrammer,
+} = require('../../src/programmer');
 
 test('thisful with .prototype', function () {
     var programmer = new Programmer1();

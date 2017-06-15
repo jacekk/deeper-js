@@ -1,3 +1,5 @@
+const toPrimitive = require('./toPrimitive');
+
 module.exports = function eq(x, y) {
     if (typeof x == typeof y) {
         return true;
@@ -20,13 +22,18 @@ module.exports = function eq(x, y) {
     if (typeof y === 'boolean') {
         return x === Number(y);
     }
-    // if (
-    //     ~['number', 'string', 'symbol'].indexOf(typeof x) &&
-    //     typeof y === 'object'
-    // ) {
-    //     return x === ToPrimitive(y);
-    // }
-    // console.log(typeof x);
+    if (
+        !!~['number', 'string', 'symbol'].indexOf(typeof x) &&
+        typeof y === 'object'
+    ) {
+        return eq(x, toPrimitive(y));
+    }
+    if (
+        !!~['number', 'string', 'symbol'].indexOf(typeof y) &&
+        typeof x === 'object'
+    ) {
+        return eq(toPrimitive(x), y);
+    }
 
     return false;
 };

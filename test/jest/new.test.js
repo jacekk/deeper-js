@@ -28,7 +28,7 @@ test('allows to create new objects', function () {
     expect(p3 instanceof NullPerson).toBeTruthy();
 });
 
-test.skip('allows to create new objects - own implementation - happy path', function () {
+test('allows to create new objects - own implementation - happy path', function () {
     var p1 = NEW(Person, ['Mateusz']);
 
     expect(p1.sayHi()).toBe('Hi, I am Mateusz');
