@@ -1,4 +1,4 @@
 polecane książki tych autorów:
 - Kyle Simpson
-- Rauchmeiner
-- Nicholas Zackas
+- Axel Rauschmayer
+- Niklas Zakas
